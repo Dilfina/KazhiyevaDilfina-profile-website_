@@ -62,6 +62,7 @@ Route::get('/posts', function () {
 	$post= Posts::find(2);
     return $post;
 });
+
 Route::get('/met/{id}/{name?}/{surname?}', function($id, $name="Ali", $surname='Askar'){
 	return $id." ".$name. " ".  $surname;
 
@@ -75,3 +76,6 @@ Route::get('blog/create', function(){
 });
 
 Route::post('blog/create', [BlogController::class, 'store'])->name('add-post');
+
+//Route::get('/calling', 'DilfinaController@operation');
+
