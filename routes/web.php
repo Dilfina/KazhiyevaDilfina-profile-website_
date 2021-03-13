@@ -59,7 +59,7 @@ Route::get('/posts/create', function (){
 
 });
 Route::get('/posts', function () {
-	$post= Posts::find(2);
+	$post= Posts::find(1);
     return $post;
 });
 
@@ -79,3 +79,4 @@ Route::post('blog/create', [BlogController::class, 'store'])->name('add-post');
 
 //Route::get('/calling', 'DilfinaController@operation');
 
+Route::get('/posts/{id}', [BlogController::class, 'get_post']);

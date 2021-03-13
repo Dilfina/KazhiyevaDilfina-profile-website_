@@ -20,7 +20,7 @@ class PostsTest extends TestCase
         $response->assertStatus(200);
     }
     public function test_posts_id_get_request(){
-    	$response = $this->get('/posts/1');
+    	$response = $this->get('/posts/2');
 
         $response->assertStatus(200);
 
@@ -29,6 +29,10 @@ class PostsTest extends TestCase
     	$response = $this->get('/posts/10000');
 
         $response->assertStatus(404);
+    }
 
+    public function test_posts_response(){
+    	$response = $this->get('/posts/2');
+    	$response->assertViewHas('post');
     }
 }
