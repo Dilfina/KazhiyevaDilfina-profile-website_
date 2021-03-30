@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\Posts;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UploadController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,3 +81,17 @@ Route::post('blog/create', [BlogController::class, 'store'])->name('add-post');
 //Route::get('/calling', 'DilfinaController@operation');
 
 Route::get('/posts/{id}', [BlogController::class, 'get_post']);
+
+Route::view('upload', 'upload');
+Route::post('upload',[UploadController::class,'index']);
+
+/*Route::get('/upl', function () {
+    return view('upload');
+});
+Route::post('upload', [UploadController::class, 'index']);
+
+//Route::get('/uploadfile', 'UploadController@index');
+//Route::post('uploadfile', 'UploadController@showUploadFile');
+
+Route::get('/uploadfile', [UploadController::class, 'index']);
+Route::post('/uploadfile', [UploadController::class, 'showUploadFile']);*/

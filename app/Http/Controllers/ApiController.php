@@ -27,7 +27,5 @@ class ApiController extends Controller
     		return response(['message'=>'There is no post with that id'], 404);
     	}
     	return response($post, 200);
-
-
     }
 }
