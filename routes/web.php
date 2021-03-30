@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Posts;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\MailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -95,3 +96,5 @@ Route::post('upload', [UploadController::class, 'index']);
 
 Route::get('/uploadfile', [UploadController::class, 'index']);
 Route::post('/uploadfile', [UploadController::class, 'showUploadFile']);*/
+
+Route::get('mail/send', [MailController::class,'send']);
