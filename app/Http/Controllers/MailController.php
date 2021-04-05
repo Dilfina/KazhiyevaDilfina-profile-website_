@@ -15,9 +15,9 @@ class MailController extends Controller
     	$objDemo->demo_one = 'Demo One Value';
     	$objDemo->demo_two = 'Demo Two Value';
     	$objDemo->sender = '190103057@stu.sdu.edu.kz';
-    	$objDemo->receiver='190103057@stu.sdu.edu.kz';
+    	$objDemo->receiver='abylay.omar@sdu.edu.kz';
 
-    	Mail::to('190103057@stu.sdu.edu.kz')->send(new DemoEmail($objDemo));
+    	Mail::to('abylay.omar@sdu.edu.kz')->send(new DemoEmail($objDemo));
 
 
     }

@@ -18,10 +18,12 @@ use App\Http\Controllers\MailController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::redirect('/', '/en');
+Route::group(['prefix'=>'{language}'], function () {
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
 
 Route::get('/main', function () {
     return view('main');
@@ -98,3 +100,12 @@ Route::get('/uploadfile', [UploadController::class, 'index']);
 Route::post('/uploadfile', [UploadController::class, 'showUploadFile']);*/
 
 Route::get('mail/send', [MailController::class,'send']);
+
+Route::get('/test', function () {
+	dd(App::getLocale());
+});
+
+});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
